@@ -1,32 +1,4 @@
-class TestPetShop(unittest.TestCase):
-
-    def setUp(self):
-        self.customers = [
-            {
-                "name": "Alice",
-                "pets": [],
-                "cash": 1000
-            },
-            {
-                "name": "Bob",
-                "pets": [],
-                "cash": 50
-            },
-            {
-                "name": "Jack",
-                "pets": [],
-                "cash": 100
-            }
-        ]
-
-        self.new_pet = {
-            "name": "Bors the Younger",
-            "pet_type": "cat",
-            "breed": "Cornish Rex",
-            "price": 100
-        }
-
-        self.cc_pet_shop = {
+pet_shop = {
             "pets": [
                 {
                     "name": "Sir Percy",
@@ -71,11 +43,19 @@ class TestPetShop(unittest.TestCase):
             },
             "name": "Camelot of Pets"
         }
-def get_pets_by_breed (pet_shop,breed):
-    pets_by_breed = [ ]
-    for pet in pet_shop["pets"][0]:
-        if pet_shop["pets"][0]["breed"]== breed:
-            pets_by_breed += pet_shop["pets"][0]["breed"]
-    return pets_by_breed
+def find_pet_by_name(pet_shop,pet_name):
+    for pet in pet_shop["pets"]:
+        if pet_name == (pet["name"]):
+            return pet
 
-    Print(get_pets_by_breed)
+print(len(find_pet_by_name(pet_shop,"Arthur")))
+print(find_pet_by_name(pet_shop,"Arthur"))
+
+def remove_pet_by_name(pet_shop, pet_name):
+    for pet in pet_shop ["pets"]:
+        if pet_name == (pet["name"]):
+            del pet
+
+pet = find_pet_by_name(pet_shop,"Arthur")
+print (remove_pet_by_name(pet_shop, "Arthur"))
+print(find_pet_by_name(pet_shop,"Arthur"))

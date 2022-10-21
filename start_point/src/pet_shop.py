@@ -29,10 +29,23 @@ def get_stock_count(pet_shop):
     stock = len(pet_shop["pets"])
     return stock
 
-# Test 8 
-def get_pets_by_breed (pet_shop,breed):
-    pets_by_breed = [ ]
-    for pet in pet_shop["pets"][0]:
-        if pet_shop["pets"][0]["breed"]== breed:
-            pets_by_breed += pet_shop["pets"][0]["breed"]
+# Test 8 & 9
+def get_pets_by_breed(pet_shop,breed):
+    pets_by_breed = []
+    for pet in pet_shop["pets"]:
+        if breed == (pet["breed"]):
+            pets_by_breed.append(pet["name"])
     return pets_by_breed
+
+# Test 10 & 11
+def find_pet_by_name(pet_shop,pet_name):
+    for pet in pet_shop["pets"]:
+        if pet_name == (pet["name"]):
+            return pet
+        
+# Test 12
+def remove_pet_by_name(pet_shop, pet_name):
+    for pet in pet_shop["pets"]:
+        if pet_name == (pet["name"]):
+            pet_shop["pets"].remove(pet)
+
